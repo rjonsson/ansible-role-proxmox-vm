@@ -1,0 +1,33 @@
+---
+
+proxmox_vm_defaults:
+
+  ## Cores
+  cores: '2'
+
+  ## Memory size
+  memory_size: '2048'
+
+  ## Memory that's acceptable to relinquish to host
+  balloon: '1024'
+
+  ## Network interfaces
+  net: '{"net0":"virtio,bridge=vmbr0"}'
+
+  ## SCSI controller (alternatives: lsi, lsi53c810, virtio-scsi-pci, virtio-scsi-single, megasas, pvscsi)
+  scsihw: 'virtio-scsi-pci'
+
+  ## Using SCSI or Virtio (alternatives: scsi, virtio)
+  storage: 'scsi'
+
+  ## SCSI hard disk
+  scsi: '{"scsi0":"local-zfs:10,cache=writeback,ssd=1"}'
+
+  ## Virtio Harddisk  
+  virtio: '{"virtio0":"local-zfs:10,cache=writeback,discard=on"}'
+
+  # Guest Operating system (alternatives: other, wxp, w2k, w2k3, w2k8, wvista, win7, win10, l24, l26, solaris)
+  ostype: 'l26'
+
+  ## Start on proxmox boot
+  onboot: 'yes'
